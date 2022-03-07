@@ -58,7 +58,7 @@ class Schedule:
             for session in course['sessions']:
                 if session['x'] == day_index:
                     courses.append(course)
-        return courses
+        return sorted(courses,key=lambda x : x['sessions'][0]['y'])
 
     def print_today_schedule(self) -> None:
         for course in self.courses:
